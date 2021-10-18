@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Sign Language Interpreter</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome to our project</a></li>
+							<li><a href="#one">Interpreter</a></li>
+							<li><a href="#two">About the Project</a></li>
+							<li><a href="#three">The Team</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Sign Language Interpreter</h1>
+							<p>Real Time SL Interpreter based on user actions <br />
+							 Recognized actions are tranlated onto the screen</p>
+							<ul class="actions">
+								<li><a href="#two" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>The Interpreter</h2>
+									<p>Allow camera access and start translating</p>
+									<ul class="actions">
+									
+									</ul>
+								</div>
+							</div>
+							<div id="container">
+								<video autoplay="true" id="videoElement">
+	
+								</video>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>About the Project</h2>
+							<p> This project aims to serve as a bridge of communication between a deaf/mute person and a normally functioning human being. </p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-code"></span>
+									<h3> Artficial Intelligence</h3>
+									<p>Makes use of intensive image processing algorithms to translate hand signs to words </p>
+								</section>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>The Team </h2>
+							<p>The team behind this project </p>
+							
+						</div>
+					</section>
+
+			</div>
+
+
+		<!--Scripts --> 
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+			var video = document.querySelector("#videoElement");
+
+			if (navigator.mediaDevices.getUserMedia) {
+  				navigator.mediaDevices.getUserMedia({ video: true })
+    			.then(function (stream) {
+      				video.srcObject = stream;
+    				})
+    			.catch(function (err0r) {
+      				console.log("Something went wrong!");
+    				});
+			} 
+			</script>
+	</body>
+</html>
