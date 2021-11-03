@@ -1,0 +1,18 @@
+services:
+    mongo-server:
+        build: ./mongo_src/
+        container_name: mongo-server
+        restart: always
+        ports:
+            - "27017:27017"
+
+    uvi-server:
+        build: ./uvi_src/
+        container_name: uvi-server
+        restart: always
+        ports:
+            - "8080:80"
+        depends_on:
+            - mongo-server
+        links: 
+            - mongo-server
