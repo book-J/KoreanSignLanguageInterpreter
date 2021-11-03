@@ -1,0 +1,39 @@
+---
+#===============================================
+API MANUAL:
+  This API has two servers running which are mongo-server and uvi-server. In case of an error for curl commands please check if the servers are up.
+  The list of curl commands for Version2 are listed along with a description of what they do and common failure conditions. Tbe JSON output format will need to be amended for double quotes in the curl commands
+    
+Commands:
+  - Syntax: curl -X POST “http://localhost:8080/v1/books/{bid}?publisher={pid}&author={aid}”
+    Explanation: Inserts Book
+    Failure:
+      - Book already exists
+      - publisher and author not given
+  - Syntax: curl -X GET “http://localhost:8080/v1/books/{bid}”
+    Explanation: Retrieve Book with given bid
+    Failure:
+      -  Book doesn't exist
+  - Syntax: curl -X DELETE “http://localhost:8080/v1/books/{bid}”
+    Explanation: Delete book with given bid
+    Failure:
+      - Book doesn't exist
+  - Syntax: curl -X POST “http://localhost:8080/v1/users/{uid}?name={name}&age={age}”
+    Explanation: Inserts User with given userid, name and age. Age is optional
+    Failure:
+      - User exists
+      - Name not given
+      - Age is not an integer between 0 and 200
+  - Syntax: curl -X GET “http://localhost:8080/v1/users/{uid}”
+    Explanation: Retrieves user information of user with given uid
+    Failure:
+      - User doesn't exist
+  - Syntax: curl -X DELETE “http://localhost:8080/v1/users/{uid}”
+    Explanation: Deletes user with given user id
+    Failure:
+      - User doesn't exist.
+  - Syntax: curl -X GET “http://localhost:8080/v1/books?publisher={pid}&author={aid}”
+    Explanation: Retrieves all books with given publisher and author
+    Failure:
+      - publisher and author parameter are not given
+...
